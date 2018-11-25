@@ -14,17 +14,23 @@
 <div class="container-fluid">
   <div class="col-md-4 col-md-offset-4">
     <form action="" method="post">
+      <?php if(isset($message)){ ?>
+        <div class="form-group alert alert-danger">
+          <p><?= $message ?></p>
+        </div>
+      <?php } ?>
+
       <div class="form-group">
         <label for="username" class="control-label">Username</label>
-        <input type="text" class="form-control" name="username">
+        <input type="text" class="form-control" name="username" autofocus required>
       </div>
       <div class="form-group">
         <label for="password" class="control-label">Password</label>
-        <input type="password" class="form-control" name="password">
+        <input type="password" class="form-control" name="password" required>
       </div>
 
       <div class="form-group">
-        <input type="submit" class="btn btn-success" name="login">
+        <input type="submit" class="btn btn-success" name="login-official">
       </div>
     </form>
   </div>
