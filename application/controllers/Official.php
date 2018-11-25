@@ -15,7 +15,10 @@ class Official extends CI_Controller {
   }
 
   public function index(){
+    $this->load->model('official_model');
     $data['view_name'] = 'home_rangers';
+    $data['rangers']   = $this->official_model->getRangers();
+    
     $this->load->view('official/index_view', $data);
   }
 
