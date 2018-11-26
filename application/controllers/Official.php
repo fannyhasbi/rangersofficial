@@ -52,4 +52,10 @@ class Official extends CI_Controller {
     $this->load->view('official/index_view', $data);
   }
 
+  public function division(){
+    $data['view_name'] = 'detail_division';
+
+    $this->load->view('official/index_view', $data);
+  }
+
 }

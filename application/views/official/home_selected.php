@@ -21,9 +21,9 @@
                   <td><?= $item->nama; ?></td>
                   <td><?= $item->jumlah; ?></td>
                   <td>
-                    <button class="btn btn-outline-info">
+                    <a href="<?= site_url('official/division/'.$item->id); ?>" class="btn btn-outline-info">
                       Lihat Rangers
-                    </button>
+                    </a>
                     <button class="btn btn-outline-success">
                       Kirim Email
                     </button>

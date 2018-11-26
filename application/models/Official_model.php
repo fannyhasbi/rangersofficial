@@ -21,7 +21,7 @@ class Official_model extends CI_Model {
 
   public function getSelectedRangers(){
     $q = "
-      SELECT dv.nama, COUNT(d.id) as jumlah
+      SELECT dv.id, dv.nama, COUNT(d.id) as jumlah
       FROM diterima d
       RIGHT JOIN division dv
         ON d.id_division = dv.id
