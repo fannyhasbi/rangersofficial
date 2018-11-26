@@ -6,6 +6,7 @@ $route['logout']= 'home/logout';
 
 $route['official'] = 'official';
 $route['official/selection'] = 'official/selection';
+$route['official/selected']  = 'official/selected';
 
 $route['default_controller'] = 'home';
 $route['404_override'] = '';

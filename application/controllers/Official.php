@@ -45,4 +45,11 @@ class Official extends CI_Controller {
     }
   }
 
+  public function selected(){
+    $data['view_name'] = 'home_selected';
+    $data['selected']  = $this->official_model->getSelectedRangers();
+    
+    $this->load->view('official/index_view', $data);
+  }
+
 }

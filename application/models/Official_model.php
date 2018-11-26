@@ -19,6 +19,19 @@ class Official_model extends CI_Model {
     return $q->result();
   }
 
+  public function getSelectedRangers(){
+    $q = "
+      SELECT dv.nama, COUNT(d.id) as jumlah
+      FROM diterima d
+      RIGHT JOIN division dv
+        ON d.id_division = dv.id
+      GROUP BY dv.id;
+    ";
+    $q = $this->db->query($q);
+
+    return $q->result();
+  }
+
   public function addSelected($division, $rangers){
     $selected = array();
     foreach($rangers as $rangers_id){

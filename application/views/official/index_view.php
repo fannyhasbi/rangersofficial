@@ -44,8 +44,14 @@
           </li>
           <li class="nav-item <?= uri_string() == 'official/selection' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= site_url('official/selection'); ?>">
-              <i class="material-icons">how_to_reg</i>
+              <i class="material-icons">group_add</i>
               <p>Seleksi</p>
+            </a>
+          </li>
+          <li class="nav-item <?= uri_string() == 'official/selected' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= site_url('official/selected'); ?>">
+              <i class="material-icons">how_to_reg</i>
+              <p>Diterima</p>
             </a>
           </li>
         </ul>
