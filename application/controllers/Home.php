@@ -20,6 +20,8 @@ class Home extends CI_Controller {
         );
 
         $this->session->set_userdata($data_session);
+
+        redirect(site_url('official'));
       }
       else {
         $this->session->set_flashdata('msg', 'Username atau password salah');
