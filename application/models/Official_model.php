@@ -2,6 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Official_model extends CI_Model { 
+  public function checkDivision($id_division){
+    return $this->db->get_where('division', ['id' => $id_division]);
+  }
+
   public function getRangers(){
     $q = $this->db->get('rangers');
     return $q->result();
@@ -29,6 +33,24 @@ class Official_model extends CI_Model {
     ";
     $q = $this->db->query($q);
 
+    return $q->result();
+  }
+
+  public function getDivisionName($id_division){
+    $q = $this->db->get_where('division', ['id' => $id_division]);
+    return $q->row()->nama;
+  }
+
+  public function getDivisionRangers($id_division){
+    $q = "
+      SELECT d.id, r.nama, r.email
+      FROM diterima d
+      INNER JOIN rangers r
+        ON d.id_rangers = r.id
+      WHERE id_division = $id_division
+    ";
+    $q = $this->db->query($q);
+    
     return $q->result();
   }
 

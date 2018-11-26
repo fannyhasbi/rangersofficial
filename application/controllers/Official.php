@@ -52,10 +52,22 @@ class Official extends CI_Controller {
     $this->load->view('official/index_view', $data);
   }
 
-  public function division(){
-    $data['view_name'] = 'detail_division';
+  public function division($id_division){
+    $id_division = (int) $id_division;
 
-    $this->load->view('official/index_view', $data);
+    $cek = $this->official_model->checkDivision($id_division);
+    if($cek->num_rows() == 0){
+      $this->session->set_flashdata('msg', 'Divisi tidak ditemukan');
+      $this->session->set_flashdata('type', 'warning');
+      redirect(site_url('official/selected'));
+    }
+    else {
+      $data['view_name'] = 'detail_division';
+      $data['division']  = $this->official_model->getDivisionName($id_division);
+      $data['rangers']   = $this->official_model->getDivisionRangers($id_division);
+
+      $this->load->view('official/index_view', $data);
+    }
   }
 
 }

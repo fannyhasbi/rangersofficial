@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title">Daftar Rangers Yang Memenuhi Kriteria Divisi {{ Yoyoy }}</h4>
+        <h4 class="card-title">Daftar Rangers Yang Memenuhi Kriteria Divisi <strong><?= $division; ?></strong></h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -16,16 +16,18 @@
               </tr>
             </thead>
             <tbody>
+              <?php foreach($rangers as $item): ?>
                 <tr>
-                  <td>1</td>
-                  <td>Fanny Hasbi</td>
-                  <td>me@example.com</td>
+                  <td><?= $item->id; ?></td>
+                  <td><?= $item->nama; ?></td>
+                  <td><?= $item->email; ?></td>
                   <td>
-                    <button rel="tooltip" title="Batalkan" class="btn btn-danger btn-link btn-sm" onclick="batalkan(1, 'Fanny Hasbi')">
+                    <button rel="tooltip" title="Batalkan" class="btn btn-danger btn-link btn-sm" onclick="batalkan(<?= $item->id .', \''. $item->nama .'\''; ?>)">
                       <i class="material-icons">clear</i>
                     </button>
                   </td>
                 </tr>
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>
