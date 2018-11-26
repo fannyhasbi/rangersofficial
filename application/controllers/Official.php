@@ -70,4 +70,21 @@ class Official extends CI_Controller {
     }
   }
 
+  public function cancel_rangers($id){
+    $id = (int) $id;
+
+    if($this->official_model->checkSelected($id)->num_rows() == 0){
+      $this->session->set_flashdata('msg', 'Rangers tidak ditemukan');
+      $this->session->set_flashdata('type', 'warning');
+      redirect(site_url('official/selected'));
+    }
+    else {
+      $this->official_model->deleteSelected($id);
+
+      $this->session->set_flashdata('msg', 'Rangers berhasil dibatalkan');
+      $this->session->set_flashdata('type', 'success');
+      redirect(site_url('official/selected'));
+    }
+  }
+
 }

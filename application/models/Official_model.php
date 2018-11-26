@@ -6,6 +6,10 @@ class Official_model extends CI_Model {
     return $this->db->get_where('division', ['id' => $id_division]);
   }
 
+  public function checkSelected($id){
+    return $this->db->get_where('diterima', ['id' => $id]);
+  }
+
   public function getRangers(){
     $q = $this->db->get('rangers');
     return $q->result();
@@ -64,5 +68,10 @@ class Official_model extends CI_Model {
     }
 
     $this->db->insert_batch('diterima', $selected);
+  }
+
+  public function deleteSelected($id){
+    $this->db->where('id', $id);
+    $this->db->delete('diterima');
   }
 }
