@@ -24,7 +24,7 @@
                     <a href="<?= site_url('official/division/'.$item->id); ?>" class="btn btn-outline-info">
                       Lihat Rangers
                     </a>
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" onclick="kirim('<?= $item->nama; ?>')">
                       Kirim Email
                     </button>
                   </td>
@@ -37,3 +37,22 @@
     </div>
   </div>
 </div>
+
+<script>
+function kirim(name){
+  swal({
+    text: `Kirim email konfirmasi Rangers divisi ${name}?`,
+    type: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    // cancelButtonColor: '#d33',
+    confirmButtonText: 'Kirim',
+    cancelButtonText: 'Kembali'
+  }).then((result) => {
+    if (result.value) {
+      // just trial
+      window.location = "<?= site_url('official/send-email/'); ?>";
+    }
+  })
+}
+</script>

@@ -87,4 +87,8 @@ class Official extends CI_Controller {
     }
   }
 
+  public function send_email(){
+    $this->load->view('email');
+  }
+
 }
