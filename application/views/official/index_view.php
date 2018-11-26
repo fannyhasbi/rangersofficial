@@ -13,6 +13,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/material-dashboard.min.css'); ?>">
+
+  <script src="<?= base_url(); ?>/assets/js/core/jquery.min.js"></script>
+  
+  <!-- Select2 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 
 <body class="">
@@ -30,13 +36,13 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="nav-item <?= uri_string() == 'official' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= site_url('official'); ?>">
               <i class="material-icons">content_paste</i>
               <p>List Rangers</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?= uri_string() == 'official/selection' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= site_url('official/selection'); ?>">
               <i class="material-icons">how_to_reg</i>
               <p>Seleksi</p>
@@ -109,7 +115,6 @@
   </div>
   
   <!--   Core JS Files   -->
-  <script src="<?= base_url(); ?>/assets/js/core/jquery.min.js"></script>
   <script src="<?= base_url(); ?>/assets/js/core/popper.min.js"></script>
   <script src="<?= base_url(); ?>/assets/js/core/bootstrap-material-design.min.js"></script>
   <script src="<?= base_url(); ?>/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>

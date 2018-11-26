@@ -7,6 +7,7 @@ class Official extends CI_Controller {
     
     // always check login data
     $this->cekLogin();
+    $this->load->model('official_model');
   }
 
   private function cekLogin(){
@@ -15,7 +16,6 @@ class Official extends CI_Controller {
   }
 
   public function index(){
-    $this->load->model('official_model');
     $data['view_name'] = 'home_rangers';
     $data['rangers']   = $this->official_model->getRangers();
     
@@ -23,8 +23,16 @@ class Official extends CI_Controller {
   }
 
   public function selection(){
-    $data['view_name'] = 'home_selection';
-    $this->load->view('official/index_view', $data);
+    if($this->input->post('send-selection')){
+      var_dump($this->input->post()); die();
+    }
+    else {
+      $data['view_name'] = 'home_selection';
+      $data['division']  = $this->official_model->getDivision();
+      $data['rangers']   = $this->official_model->getUnselectedRangers();
+
+      $this->load->view('official/index_view', $data);
+    }
   }
 
 }
