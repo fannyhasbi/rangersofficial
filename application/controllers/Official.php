@@ -24,7 +24,17 @@ class Official extends CI_Controller {
 
   public function selection(){
     if($this->input->post('send-selection')){
-      var_dump($this->input->post()); die();
+      $division = (int) $this->input->post('division');
+      $rangers = array();
+      foreach($this->input->post('rangers') as $id)
+        $rangers[] = (int) $id;
+
+      $this->official_model->addSelected($division, $rangers);
+
+      $this->session->set_flashdata('msg', 'Berhasil menyimpan');
+      $this->session->set_flashdata('type', 'success');
+
+      redirect(site_url('official/selection'));
     }
     else {
       $data['view_name'] = 'home_selection';

@@ -18,4 +18,16 @@ class Official_model extends CI_Model {
 
     return $q->result();
   }
+
+  public function addSelected($division, $rangers){
+    $selected = array();
+    foreach($rangers as $rangers_id){
+      $selected[] = [
+        "id_division" => $division,
+        "id_rangers"  => $rangers_id
+      ];
+    }
+
+    $this->db->insert_batch('diterima', $selected);
+  }
 }
