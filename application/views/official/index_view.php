@@ -17,7 +17,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white">
+    <div class="sidebar" data-color="orange" data-background-color="white">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -30,10 +30,16 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active ">
-            <a class="nav-link" href="#">
+          <li class="nav-item active">
+            <a class="nav-link" href="<?= site_url('official'); ?>">
               <i class="material-icons">content_paste</i>
               <p>List Rangers</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= site_url('official/selection'); ?>">
+              <i class="material-icons">how_to_reg</i>
+              <p>Seleksi</p>
             </a>
           </li>
         </ul>

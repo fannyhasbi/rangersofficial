@@ -22,4 +22,9 @@ class Official extends CI_Controller {
     $this->load->view('official/index_view', $data);
   }
 
+  public function selection(){
+    $data['view_name'] = 'home_selection';
+    $this->load->view('official/index_view', $data);
+  }
+
 }
