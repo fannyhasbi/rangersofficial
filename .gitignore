@@ -27,3 +27,4 @@ composer.lock
 /tests/results/
 
 rangers.sql
+.env
