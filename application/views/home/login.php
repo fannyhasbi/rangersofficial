@@ -3,6 +3,7 @@
 <head>
   <title>Login</title>
   <meta charset="utf-8">
+  <link href="https://2018.futureleadersummit.org/favicon.ico" rel="icon" type="image/x-icon">
   <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
 </head>
 <body>

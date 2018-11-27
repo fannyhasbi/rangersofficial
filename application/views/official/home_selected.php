@@ -21,10 +21,10 @@
                   <td><?= $item->nama; ?></td>
                   <td><?= $item->jumlah; ?></td>
                   <td>
-                    <a href="<?= site_url('official/division/'.$item->id); ?>" class="btn btn-outline-info">
+                    <button onclick="window.location = '<?= site_url('official/division/'.$item->id); ?>'" class="btn btn-outline-info" <?= $item->jumlah == 0 ? 'disabled' : ''; ?>>
                       Lihat Rangers
-                    </a>
-                    <button class="btn btn-outline-success">
+                    </button>
+                    <button class="btn btn-outline-success" onclick="kirim(<?= $item->id; ?>, '<?= $item->nama; ?>')" <?= $item->jumlah == 0 ? 'disabled' : ''; ?>>
                       Kirim Email
                     </button>
                   </td>
@@ -37,3 +37,22 @@
     </div>
   </div>
 </div>
+
+<script>
+function kirim(id, name){
+  swal({
+    text: `Kirim email pengumuman ke Rangers divisi ${name}?`,
+    type: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    // cancelButtonColor: '#d33',
+    confirmButtonText: 'Kirim',
+    cancelButtonText: 'Kembali'
+  }).then((result) => {
+    if (result.value) {
+      // just trial
+      window.location = "<?= site_url('official/send-email/'); ?>"+ id;
+    }
+  })
+}
+</script>

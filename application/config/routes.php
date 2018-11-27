@@ -10,6 +10,8 @@ $route['official/selected']  = 'official/selected';
 $route['official/division/(:num)'] = 'official/division/$1';
 $route['official/cancel-rangers/(:num)'] = 'official/cancel_rangers/$1';
 
+$route['official/send-email/(:num)'] = 'official/send_email/$1';
+
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
