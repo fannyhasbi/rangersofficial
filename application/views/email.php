@@ -219,7 +219,7 @@
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                           <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                              <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">Selamat, Fanny Hasbi!</h1>
+                              <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">Selamat, <?= $nama; ?>!</h1>
                               <p style="margin: 0;">Blablbalablablalbablabl albalsblablasdbals baslbda lsdblas dblasbdlasbdl asbd lasbdlasb dlasbdl asbdlas bdlasb dlksab dabsld asbd laskbd lasb dlasbd lasb dlasbdlasbdl asb dlbasd aslbd lsabdlsabdlkasbdlkasbldbsal dbasl dblas bdlsa. Blablbalablablalbablabl albalsblablasdbals baslbda lsdblas dblasbdlasbdl asbd lasbdlasb dlasbdl asbdlas bdlasb dlksab dabsld asbd laskbd lasb dlasbd lasb dlasbdlasbdl asb dlbasd aslbd lsabdlsabdlkasbdlkasbldbsal dbasl dblas bdlsa.</p>
                             </td>
                           </tr>
