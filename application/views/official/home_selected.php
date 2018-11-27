@@ -21,10 +21,10 @@
                   <td><?= $item->nama; ?></td>
                   <td><?= $item->jumlah; ?></td>
                   <td>
-                    <a href="<?= site_url('official/division/'.$item->id); ?>" class="btn btn-outline-info">
+                    <button onclick="window.location = '<?= site_url('official/division/'.$item->id); ?>'" class="btn btn-outline-info" <?= $item->jumlah == 0 ? 'disabled' : ''; ?>>
                       Lihat Rangers
-                    </a>
-                    <button class="btn btn-outline-success" onclick="kirim('<?= $item->nama; ?>')">
+                    </button>
+                    <button class="btn btn-outline-success" onclick="kirim('<?= $item->nama; ?>')" <?= $item->jumlah == 0 ? 'disabled' : ''; ?>>
                       Kirim Email
                     </button>
                   </td>
