@@ -87,38 +87,59 @@ class Official extends CI_Controller {
     }
   }
 
-  public function send_email(){
-    $config = array(
-        'protocol'  => 'smtp',
-        'smtp_host' => getenv('OFFICIAL_SMTP_HOST'),
-        'smtp_port' => getenv('OFFICIAL_SMTP_PORT'),
-        'smtp_user' => getenv('OFFICIAL_SMTP_USER'),
-        'smtp_pass' => getenv('OFFICIAL_SMTP_PASS'),
-        'mailtype'  => 'html',
-        'priority'  => 1,
-        'charset'   => 'utf-8'
-    );
+  public function send_email($id_division){
+    $id_division = (int) $id_division;
+    $cek = $this->official_model->checkDivision($id_division);
 
-    $this->load->library('email', $config);
-
-    //Email content
-    $htmlContent = $this->load->view('email', ['nama' => 'Fanny Hasbi'], true);
-
-    $this->email->to('fnyhsbi@gmail.com');
-    $this->email->from('it@futureleadersummit.org','IT FLS 2019');
-    $this->email->subject('Ini hanyalah email percobaan saja');
-    $this->email->message($htmlContent);
-
-    //Send email
-    if($this->email->send()){
-      $this->session->set_flashdata('msg', 'Berhasil mengirim email');
-      $this->session->set_flashdata('type', 'success');
-
+    if($cek->num_rows() == 0){
+      $this->session->set_flashdata('msg', 'Divisi tidak ditemukan');
+      $this->session->set_flashdata('type', 'warning');
       redirect(site_url('official/selected'));
     }
     else {
-      $this->session->set_flashdata('msg', 'Terjadi kesalahan dalam mengirim email');
-      $this->session->set_flashdata('type', 'error');
+      $division = $cek->row();
+      $rangers = $this->official_model->getDivisionRangers($id_division);
+      // Initialize content data
+      $data['nama_divisi'] = $division->nama;
+      $data['gambar'] = image_definer($id_division);
+
+      foreach($rangers as $person){
+        // Embedded data to content
+        $data['nama'] = $person->nama;
+
+        $this->load->view('email', $data);
+        //Email content
+        $htmlContent = $this->load->view('email', $data, true);
+        
+        $config = array(
+            'protocol'  => 'smtp',
+            'smtp_host' => getenv('OFFICIAL_SMTP_HOST'),
+            'smtp_port' => getenv('OFFICIAL_SMTP_PORT'),
+            'smtp_user' => getenv('OFFICIAL_SMTP_USER'),
+            'smtp_pass' => getenv('OFFICIAL_SMTP_PASS'),
+            'mailtype'  => 'html',
+            'priority'  => 1,
+            'charset'   => 'utf-8'
+        );
+
+        $this->load->library('email', $config);
+
+        $this->email->to($person->email);
+        $this->email->from('it@futureleadersummit.org','IT FLS 2019');
+        $this->email->subject('Welcome to Future Leader Summit 2019!');
+        $this->email->message($htmlContent);
+
+        //Send email
+        if(!$this->email->send()){
+          $this->session->set_flashdata('msg', 'Terjadi kesalahan dalam mengirim email ke <strong>'. $person->email .'</strong>');
+          $this->session->set_flashdata('type', 'error');
+
+          redirect(site_url('official/selected'));
+        }
+      }
+
+      $this->session->set_flashdata('msg', 'Berhasil mengirim email');
+      $this->session->set_flashdata('type', 'success');
 
       redirect(site_url('official/selected'));
     }

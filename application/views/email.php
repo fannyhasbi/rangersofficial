@@ -100,7 +100,7 @@
   <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
     <center style="width: 100%; background-color: #222222;">
           <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-            (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
+            Future Leader Summit adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. rangers sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turu andil membuat perubahan untuk Indonesia.
           </div>
           <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
             &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
@@ -109,7 +109,7 @@
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 auto;">
                     <tr>
                       <td style="background-color: #ffffff;">
-                        <img src="<?= base_url('uploads/announcement/program.jpg'); ?>" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto;" class="g-img">
+                        <img src="<?= base_url('uploads/announcement/'.$gambar); ?>" width="600" height="" alt="alt_text" border="0" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto;" class="g-img">
                       </td>
                     </tr>
                     <tr>
@@ -124,7 +124,7 @@ Future Leader Summit adalah sebuah konferensi kepemudaan Nasional yang mengajak 
 
 Setelah melewati proses seleksi screening CV, interview, dan FGD, kami mengucapkan SELAMAT bahwa kamu terpilih menjadi Rangers Future Leader Summit 2019. Kamu terpilih menjadi bagian dari divisi Information and Technology.
 
-Untuk informasi lebih lanjut silahkan menghubungi Director divisi kamu, Shabrina melalui SMS/LINE/Whatsapp 085742466050.
+Untuk informasi lebih lanjut silahkan menghubungi Finance and Talent Management, Shabrina melalui LINE 085742466050.
 
 Terima Kasih!
 
