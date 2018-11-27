@@ -121,10 +121,10 @@
                               <p style="margin: 0; text-align: justify;">Future Leader Summit adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. rangers sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turu andil membuat perubahan untuk Indonesia.
                                 <br><br>
                                 Setelah melewati proses seleksi screening CV, interview, dan FGD, kami mengucapkan SELAMAT bahwa kamu terpilih menjadi Rangers Future Leader Summit 2019. Kamu terpilih menjadi bagian dari divisi <?= $nama_divisi; ?>.
-                                <br>
+                                <br><br>
                                 Untuk informasi lebih lanjut silahkan menghubungi Finance and Talent Management, Shabrina melalui LINE 085742466050. Terima Kasih!
                                 <br><br>
-                                Salam hangat, Future Leader Summit 2019 Team.
+                                Salam hangat, First Line Future Leader Summit 2019.
                               </p>
                             </td>
                           </tr>

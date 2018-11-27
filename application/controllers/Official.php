@@ -107,7 +107,6 @@ class Official extends CI_Controller {
         // Embedded data to content
         $data['nama'] = $person->nama;
 
-        $this->load->view('email', $data);
         //Email content
         $htmlContent = $this->load->view('email', $data, true);
         
@@ -125,8 +124,8 @@ class Official extends CI_Controller {
         $this->load->library('email', $config);
 
         $this->email->to($person->email);
-        $this->email->from('it@futureleadersummit.org','IT FLS 2019');
-        $this->email->subject('Welcome to Future Leader Summit 2019!');
+        $this->email->from('official@futureleadersummit.org','Official FLS 2019');
+        $this->email->subject('Welcome to Future Leader Summit 2019');
         $this->email->message($htmlContent);
 
         //Send email
