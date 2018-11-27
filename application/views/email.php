@@ -118,17 +118,14 @@
                           <tr>
                             <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                               <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">Selamat Datang di Future Leader Summit 2019, <?= $nama; ?>!</h1>
-                              <p style="margin: 0; text-align: justify;">
-
-Future Leader Summit adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. rangers sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turu andil membuat perubahan untuk Indonesia.
-
-Setelah melewati proses seleksi screening CV, interview, dan FGD, kami mengucapkan SELAMAT bahwa kamu terpilih menjadi Rangers Future Leader Summit 2019. Kamu terpilih menjadi bagian dari divisi Information and Technology.
-
-Untuk informasi lebih lanjut silahkan menghubungi Finance and Talent Management, Shabrina melalui LINE 085742466050.
-
-Terima Kasih!
-
-Salam hangat, Future Leader Summit 2019 Team.</p>
+                              <p style="margin: 0; text-align: justify;">Future Leader Summit adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. rangers sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turu andil membuat perubahan untuk Indonesia.
+                                <br><br>
+                                Setelah melewati proses seleksi screening CV, interview, dan FGD, kami mengucapkan SELAMAT bahwa kamu terpilih menjadi Rangers Future Leader Summit 2019. Kamu terpilih menjadi bagian dari divisi <?= $nama_divisi; ?>.
+                                <br>
+                                Untuk informasi lebih lanjut silahkan menghubungi Finance and Talent Management, Shabrina melalui LINE 085742466050. Terima Kasih!
+                                <br><br>
+                                Salam hangat, Future Leader Summit 2019 Team.
+                              </p>
                             </td>
                           </tr>
                         </table>
