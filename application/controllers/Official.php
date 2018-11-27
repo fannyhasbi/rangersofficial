@@ -88,37 +88,23 @@ class Official extends CI_Controller {
   }
 
   public function send_email(){
-    //Load email library
-    $this->load->library('email');
-
-    //SMTP & mail configuration
     $config = array(
         'protocol'  => 'smtp',
         'smtp_host' => getenv('OFFICIAL_SMTP_HOST'),
-        'smtp_port' => (int) getenv('OFFICIAL_SMTP_PORT'),
+        'smtp_port' => getenv('OFFICIAL_SMTP_PORT'),
         'smtp_user' => getenv('OFFICIAL_SMTP_USER'),
         'smtp_pass' => getenv('OFFICIAL_SMTP_PASS'),
         'mailtype'  => 'html',
+        'priority'  => 1,
         'charset'   => 'utf-8'
     );
 
-    $this->email->initialize($config);
-    $this->email->set_mailtype("html");
-    $this->email->set_newline("\r\n");
+    $this->load->library('email', $config);
 
     //Email content
-    $htmlContent = '
-      <!DOCTYPE html>
-      <html>
-      <head><title>This is title</title></head>
-      <body>
-        <h1>Hello world</h1>
-        <p>This is the paragraph</p>
-      </body>
-      </html>
-    ';
+    $htmlContent = $this->load->view('email', ['nama' => 'Fanny Hasbi'], true);
 
-    $this->email->to('fannyht@student.ce.undip.ac.id');
+    $this->email->to('fnyhsbi@gmail.com');
     $this->email->from('it@futureleadersummit.org','IT FLS 2019');
     $this->email->subject('Ini hanyalah email percobaan saja');
     $this->email->message($htmlContent);
@@ -133,6 +119,8 @@ class Official extends CI_Controller {
     else {
       $this->session->set_flashdata('msg', 'Terjadi kesalahan dalam mengirim email');
       $this->session->set_flashdata('type', 'error');
+
+      redirect(site_url('official/selected'));
     }
   }
 }
