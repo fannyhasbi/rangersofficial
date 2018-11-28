@@ -58,6 +58,20 @@ class Official_model extends CI_Model {
     return $q->result();
   }
 
+  public function getDirector($id_division){
+    $id_division = (int) $id_division;
+    $q = '
+      SELECT dr.nama, dr.telp, dr.kontak_line
+      FROM director dr
+      INNER JOIN division dv
+        ON dr.id_division = dv.id
+      WHERE id_division = '. $id_division;
+    
+    $q = $this->db->query($q);
+
+    return $q->row();
+  }
+
   public function addSelected($division, $rangers){
     $selected = array();
     foreach($rangers as $rangers_id){

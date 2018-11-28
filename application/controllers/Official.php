@@ -98,49 +98,54 @@ class Official extends CI_Controller {
     }
     else {
       $division = $cek->row();
+      $director = $this->official_model->getDirector($id_division);
       $rangers = $this->official_model->getDivisionRangers($id_division);
       // Initialize content data
       $data['nama_divisi'] = $division->nama;
-      $data['gambar'] = image_definer($id_division);
+      $data['gambar']      = image_definer($id_division);
+      $data['director']    = $director->nama;
+      $data['telp']        = $director->telp;
+      $data['line']        = $director->kontak_line;
 
       foreach($rangers as $person){
-        // Embedded data to content
+        // // Embedded data to content
         $data['nama'] = $person->nama;
 
-        //Email content
-        $htmlContent = $this->load->view('email', $data, true);
+        $this->load->view('email', $data);
+        // //Email content
+        // $htmlContent = $this->load->view('email', $data, true);
         
-        $config = array(
-            'protocol'  => 'smtp',
-            'smtp_host' => getenv('OFFICIAL_SMTP_HOST'),
-            'smtp_port' => getenv('OFFICIAL_SMTP_PORT'),
-            'smtp_user' => getenv('OFFICIAL_SMTP_USER'),
-            'smtp_pass' => getenv('OFFICIAL_SMTP_PASS'),
-            'mailtype'  => 'html',
-            'priority'  => 1,
-            'charset'   => 'utf-8'
-        );
+        // $config = array(
+        //     'protocol'  => 'smtp',
+        //     'smtp_host' => getenv('OFFICIAL_SMTP_HOST'),
+        //     'smtp_port' => getenv('OFFICIAL_SMTP_PORT'),
+        //     'smtp_user' => getenv('OFFICIAL_SMTP_USER'),
+        //     'smtp_pass' => getenv('OFFICIAL_SMTP_PASS'),
+        //     'mailtype'  => 'html',
+        //     'priority'  => 1,
+        //     'charset'   => 'utf-8'
+        // );
 
-        $this->load->library('email', $config);
+        // $this->load->library('email', $config);
 
-        $this->email->to($person->email);
-        $this->email->from('official@futureleadersummit.org','Official FLS 2019');
-        $this->email->subject('Welcome to Future Leader Summit 2019');
-        $this->email->message($htmlContent);
+        // $this->email->to($person->email);
+        // $this->email->from('official@futureleadersummit.org','Official FLS 2019');
+        // $this->email->subject('Welcome to Future Leader Summit 2019');
+        // $this->email->message($htmlContent);
 
-        //Send email
-        if(!$this->email->send()){
-          $this->session->set_flashdata('msg', 'Terjadi kesalahan dalam mengirim email ke <strong>'. $person->email .'</strong>');
-          $this->session->set_flashdata('type', 'error');
+        // //Send email
+        // if(!$this->email->send()){
+        //   $this->session->set_flashdata('msg', 'Terjadi kesalahan dalam mengirim email ke <strong>'. $person->email .'</strong>');
+        //   $this->session->set_flashdata('type', 'error');
 
-          redirect(site_url('official/selected'));
-        }
+        //   redirect(site_url('official/selected'));
+        // }
       }
 
-      $this->session->set_flashdata('msg', 'Berhasil mengirim email');
-      $this->session->set_flashdata('type', 'success');
+      // $this->session->set_flashdata('msg', 'Berhasil mengirim email');
+      // $this->session->set_flashdata('type', 'success');
 
-      redirect(site_url('official/selected'));
+      // redirect(site_url('official/selected'));
     }
   }
 }
