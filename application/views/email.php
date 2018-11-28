@@ -100,7 +100,7 @@
   <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
     <center style="width: 100%; background-color: #222222;">
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-      Future Leader Summit adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. rangers sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turu andil membuat perubahan untuk Indonesia.
+      Future Leader Summit adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. rangers sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turut andil membuat perubahan untuk Indonesia.
     </div>
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
       &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
@@ -117,13 +117,13 @@
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
               <tr>
                 <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                  <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">WELCOME TO FUTURE LEADER SUMMIT TEAM 2019!</h1>
+                  <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal; text-align: center;">WELCOME TO FUTURE LEADER SUMMIT TEAM 2019!</h1>
                   <p>Dear, <?= $nama; ?></p><br>
-                  <p style="margin: 0; text-align: justify;"><strong>Future Leader Summit</strong> adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. rangers sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turu andil membuat perubahan untuk Indonesia.
+                  <p style="margin: 0; text-align: justify;"><strong>Future Leader Summit</strong> adalah sebuah konferensi kepemudaan Nasional yang mengajak pemuda untuk melakukan perubahan-perubahan untuk Indonesia yang lebih baik. <b>Rangers</b> sendiri merupakan sebutan bagi kamu pemuda Indonesia yang berani untuk turut andil membuat perubahan untuk Indonesia.
                     <br><br>
-                    Setelah melewati proses seleksi interview dan Forum Group Discussion, kami mengucapkan <b>SELAMAT</b> bahwa kamu terpilih menjadi <strong>Rangers Future Leader Summit 2019</strong>! Kamu terpilih menjadi bagian dari divisi <strong><?= $nama_divisi; ?></strong>.
+                    Setelah melewati proses seleksi Interview dan Forum Group Discussion, kami mengucapkan <b>SELAMAT</b> bahwa kamu terpilih menjadi <strong>Rangers Future Leader Summit 2019</strong>! Kamu terpilih menjadi bagian dari divisi <strong><?= $nama_divisi; ?></strong>.
                     <br><br>
-                    Untuk informasi lebih lanjut silahkan menghubungi Director divisi kamu, <b><?= $director; ?></b> melalui SMS <?= $telp; ?> atau LINE <?= $line; ?>.
+                    Untuk informasi lebih lanjut silahkan menghubungi Director divisi kamu, <?= $director; ?> melalui WA <?= $telp; ?> atau LINE <?= $line; ?>.
                     <br><br>
                     Terima Kasih!
                     <br><br>
