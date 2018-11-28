@@ -58,6 +58,18 @@ class Official_model extends CI_Model {
     return $q->result();
   }
 
+  public function getDivisionRangerById($id_diterima){
+    $q = "
+      SELECT d.id, r.nama, r.email
+      FROM diterima d
+      INNER JOIN rangers r
+        ON d.id_rangers = r.id
+      WHERE d.id = ". $id_diterima;
+    $q = $this->db->query($q);
+    
+    return $q->row();
+  }
+
   public function getDirector($id_division){
     $id_division = (int) $id_division;
     $q = '
@@ -69,6 +81,11 @@ class Official_model extends CI_Model {
     
     $q = $this->db->query($q);
 
+    return $q->row();
+  }
+
+  public function getSelectedData($id_diterima){
+    $q = $this->db->get_where('diterima', ['id' => $id_diterima]);
     return $q->row();
   }
 

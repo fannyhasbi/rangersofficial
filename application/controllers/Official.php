@@ -148,4 +148,27 @@ class Official extends CI_Controller {
       // redirect(site_url('official/selected'));
     }
   }
+
+  public function preview_email($id_diterima){
+    $selected = $this->official_model->getSelectedData($id_diterima);
+    $id_division = (int) $selected->id_division;
+    $id_rangers  = (int) $selected->id_rangers;
+
+    $division = $this->official_model->checkDivision($id_division);
+    $division = $division->row();
+    $director = $this->official_model->getDirector($id_division);
+    $person = $this->official_model->getDivisionRangerById($id_diterima);
+    
+    // Initialize content data
+    $data['nama_divisi'] = $division->nama;
+    $data['gambar']      = image_definer($id_division);
+    $data['director']    = $director->nama;
+    $data['telp']        = $director->telp;
+    $data['line']        = $director->kontak_line;
+      
+    // // Embedded data to content
+    $data['nama'] = $person->nama;
+
+    $this->load->view('email', $data); 
+  }
 }
