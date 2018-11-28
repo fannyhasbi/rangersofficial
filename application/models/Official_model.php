@@ -89,6 +89,12 @@ class Official_model extends CI_Model {
     return $q->row();
   }
 
+  public function getDivisionStatus($id_division){
+    $q = $this->db->get_where('division_status', ['id' => $id_division]);
+
+    return $q->row();
+  }
+
   public function addSelected($division, $rangers){
     $selected = array();
     foreach($rangers as $rangers_id){
@@ -99,6 +105,15 @@ class Official_model extends CI_Model {
     }
 
     $this->db->insert_batch('diterima', $selected);
+  }
+
+  public function updateDivisionStatus($id_division){
+    $this->db->where('id', (int) $id_division);
+    $data = array(
+      'status' => 1
+    );
+
+    $this->db->update('division_status', $data);
   }
 
   public function deleteSelected($id){

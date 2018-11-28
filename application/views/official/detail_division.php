@@ -24,7 +24,7 @@
                   <td>
                     <a href="<?= site_url('official/preview-email/'.$item->id); ?>" target="_blank" rel="tooltip" title="Lihat tampilan email" class="btn btn-info btn-link btn-sm">
                       <i class="material-icons">visibility</i>
-                    </button>
+                    </a>
                     <button rel="tooltip" title="Batalkan" class="btn btn-danger btn-link btn-sm" onclick="batalkan(<?= $item->id .', \''. $item->nama .'\''; ?>)">
                       <i class="material-icons">clear</i>
                     </button>
